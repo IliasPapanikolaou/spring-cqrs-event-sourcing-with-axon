@@ -30,17 +30,18 @@ Axon Server url: <http://localhost:8024>
 ## Maven dependencies for Axon server
 
 ```xml
-<dependency>
-    <groupId>org.axonframework</groupId>
-    <artifactId>axon-spring-boot-starter</artifactId>
-    <version>4.7.1</version>
-</dependency>
-
-<dependency>
-    <groupId>com.google.guava</groupId>
-    <artifactId>guava</artifactId>
-    <version>31.1-jre</version>
-</dependency>
+<dependencies>
+    <dependency>
+        <groupId>org.axonframework</groupId>
+        <artifactId>axon-spring-boot-starter</artifactId>
+        <version>4.7.1</version>
+    </dependency>
+    <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>31.1-jre</version>
+    </dependency>
+</dependencies>
 ```
 
 ## REST API
@@ -56,3 +57,7 @@ POST: <http://localhost:8081/products>
 ```
 
 GET: <http://localhost:8081/products>
+
+![](img/cqrs_1.png)
+![](img/cqrs_2.png)
+![](img/cqrs_3.png)

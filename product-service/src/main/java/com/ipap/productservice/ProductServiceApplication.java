@@ -1,7 +1,21 @@
-package com.ipap;
+package com.ipap.productservice;
 
-public class Main {
+import com.ipap.productservice.command.api.exception.ProductServiceEventsErrorHandler;
+import org.axonframework.config.EventProcessingConfigurer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ProductServiceApplication {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        SpringApplication.run(ProductServiceApplication.class);
+    }
+
+    @Autowired
+    public void configure(EventProcessingConfigurer configurer) {
+        configurer.registerListenerInvocationErrorHandler(
+                "product", configuration -> new ProductServiceEventsErrorHandler()
+        );
     }
 }
