@@ -1,5 +1,6 @@
 package com.ipap.paymentservice.command.api.events;
 
+import com.ipap.commonsservice.events.PaymentCancelledEvent;
 import com.ipap.commonsservice.events.PaymentProcessedEvent;
 import com.ipap.commonsservice.model.PaymentStatus;
 import com.ipap.paymentservice.command.api.data.Payment;
@@ -27,5 +28,13 @@ public class PaymentsEventHandler {
                 .timestamp(new Date())
                 .build();
         paymentRepository.save(payment);
+    }
+
+    @EventHandler
+    public void on(PaymentCancelledEvent event) {
+        paymentRepository.findById(event.getPaymentId()).ifPresent(payment -> {
+            payment.setPaymentStatus(event.getPaymentStatus());
+            paymentRepository.save(payment);
+        });
     }
 }

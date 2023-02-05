@@ -1,11 +1,7 @@
 package com.ipap.orderservice.command.api.saga;
 
-import com.ipap.commonsservice.commands.CompleteOrderCommand;
-import com.ipap.commonsservice.commands.ShipmentOrderCommand;
-import com.ipap.commonsservice.commands.ValidatePaymentCommand;
-import com.ipap.commonsservice.events.OrderCompletedEvent;
-import com.ipap.commonsservice.events.OrderShippedEvent;
-import com.ipap.commonsservice.events.PaymentProcessedEvent;
+import com.ipap.commonsservice.commands.*;
+import com.ipap.commonsservice.events.*;
 import com.ipap.commonsservice.model.OrderStatus;
 import com.ipap.commonsservice.model.User;
 import com.ipap.commonsservice.queries.GetUserPaymentDetailsQuery;
@@ -19,6 +15,8 @@ import org.axonframework.modelling.saga.StartSaga;
 import org.axonframework.queryhandling.QueryGateway;
 import org.axonframework.spring.stereotype.Saga;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 
 import java.util.UUID;
 
@@ -30,6 +28,8 @@ public class OrderProcessingSaga {
     private transient CommandGateway commandGateway;
     @Autowired
     private transient QueryGateway queryGateway;
+    @Autowired
+    private transient Environment env;
 
     public OrderProcessingSaga() {
     }
@@ -57,13 +57,24 @@ public class OrderProcessingSaga {
         } catch (Exception e) {
             log.error(e.getMessage());
             // Start the compensating transaction
+            cancelOrderCommand(event.getOrderId());
+
         }
+    }
+
+    private void cancelOrderCommand(String orderId) {
+        CancelOrderCommand cancelOrderCommand = new CancelOrderCommand(orderId);
+        commandGateway.send(cancelOrderCommand);
     }
 
     @SagaEventHandler(associationProperty = "orderId")
     public void handle(PaymentProcessedEvent event) {
         log.info("PaymentProcessedEvent in Saga for Order Id: {}", event.getOrderId());
         try {
+            // Emulate Shipment failure in order to Trigger Cancellation Saga
+            if(Boolean.parseBoolean(env.getProperty("app.emulateShipmentFailure"))) {
+                throw new Exception("Emulating shipment failure...");
+            }
             ShipmentOrderCommand shipmentOrderCommand = ShipmentOrderCommand.builder()
                     .shipmentId(UUID.randomUUID().toString())
                     .orderId(event.getOrderId())
@@ -72,7 +83,13 @@ public class OrderProcessingSaga {
         } catch (Exception e) {
             log.error(e.getMessage());
             // Start the compensating transaction
+            cancelPaymentCommand(event.getPaymentId(), event.getOrderId());
         }
+    }
+
+    private void cancelPaymentCommand(String paymentId, String orderId) {
+        CancelPaymentCommand cancelPaymentCommand = new CancelPaymentCommand(paymentId, orderId);
+        commandGateway.send(cancelPaymentCommand);
     }
 
     @SagaEventHandler(associationProperty = "orderId")
@@ -95,5 +112,20 @@ public class OrderProcessingSaga {
     public void handle(OrderCompletedEvent event) {
         log.info("OrderCompletedEvent in Saga for Order Id: {}", event.getOrderId());
         // We don't create Send Invoice event, so we end the saga flow here
+    }
+
+    /*
+     * SAGA Cancellation handlers
+     */
+    @SagaEventHandler(associationProperty = "orderId")
+    public void handle(OrderCancelledEvent event) {
+        log.info("OrderCancelledEven in Saga for Order Id: {}", event.getOrderId());
+    }
+
+    @SagaEventHandler(associationProperty = "orderId")
+    public void handle(PaymentCancelledEvent event) {
+        log.info("PaymentCancelledEvent in Saga for Order Id: {}", event.getOrderId());
+        // We cascade the cancellations (like Transactional)
+        cancelOrderCommand(event.getOrderId());
     }
 }

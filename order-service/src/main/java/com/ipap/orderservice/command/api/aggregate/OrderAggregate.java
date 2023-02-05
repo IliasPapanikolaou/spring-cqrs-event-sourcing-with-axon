@@ -1,6 +1,8 @@
 package com.ipap.orderservice.command.api.aggregate;
 
+import com.ipap.commonsservice.commands.CancelOrderCommand;
 import com.ipap.commonsservice.commands.CompleteOrderCommand;
+import com.ipap.commonsservice.events.OrderCancelledEvent;
 import com.ipap.commonsservice.events.OrderCompletedEvent;
 import com.ipap.commonsservice.model.OrderStatus;
 import com.ipap.orderservice.command.api.command.CreateOrderCommand;
@@ -49,7 +51,7 @@ public class OrderAggregate {
 
     @CommandHandler
     public void handle(CompleteOrderCommand completeOrderCommand) {
-        // TODO: Validate command
+        // Validate command
         // Publish Order Completed Event
         OrderCompletedEvent orderCompletedEvent = OrderCompletedEvent.builder()
                 .orderId(completeOrderCommand.getOrderId())
@@ -61,6 +63,19 @@ public class OrderAggregate {
 
     @EventSourcingHandler
     public void on(OrderCompletedEvent event) {
+        this.orderStatus = event.getOrderStatus();
+    }
+
+    @CommandHandler
+    public void handle(CancelOrderCommand cancelOrderCommand) {
+        OrderCancelledEvent orderCancelledEvent = new OrderCancelledEvent();
+        BeanUtils.copyProperties(cancelOrderCommand, orderCancelledEvent);
+        AggregateLifecycle.apply(orderCancelledEvent);
+        log.info("OrderCancelledEvent Applied");
+    }
+
+    @EventSourcingHandler
+    public void on(OrderCancelledEvent event) {
         this.orderStatus = event.getOrderStatus();
     }
 }

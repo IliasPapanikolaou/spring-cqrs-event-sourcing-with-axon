@@ -1,5 +1,6 @@
 package com.ipap.orderservice.command.api.events;
 
+import com.ipap.commonsservice.events.OrderCancelledEvent;
 import com.ipap.commonsservice.events.OrderCompletedEvent;
 import com.ipap.orderservice.command.api.data.Order;
 import com.ipap.orderservice.command.api.data.OrderRepository;
@@ -25,6 +26,14 @@ public class OrderEventsHandler {
 
     @EventHandler
     public void on(OrderCompletedEvent event) {
+        orderRepository.findById(event.getOrderId()).ifPresent(order -> {
+            order.setOrderStatus(event.getOrderStatus());
+            orderRepository.save(order);
+        });
+    }
+
+    @EventHandler
+    public void on(OrderCancelledEvent event) {
         orderRepository.findById(event.getOrderId()).ifPresent(order -> {
             order.setOrderStatus(event.getOrderStatus());
             orderRepository.save(order);
