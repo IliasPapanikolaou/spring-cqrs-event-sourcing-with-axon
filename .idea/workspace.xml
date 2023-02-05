@@ -4,35 +4,64 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8992d9f0-730c-4d5e-8d36-f7b573a8c978" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/cqrs_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/cqrs_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/cqrs_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/ProductServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/aggregate/ProductAggregate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/commands/CreateProductCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/controller/ProductCommandController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/data/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/data/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/events/ProductCreatedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/events/ProductEventsHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/exception/ProductServiceEventsErrorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/model/ProductRestModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/query/api/controller/ProductQueryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/query/api/projection/ProductProjection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/query/api/queries/GetProductsQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="8992d9f0-730c-4d5e-8d36-f7b573a8c978" name="Changes" comment="Init commit">
+      <change afterPath="$PROJECT_DIR$/commons-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/CommonServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/commands/CompleteOrderCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/commands/ShipmentOrderCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/commands/ValidatePaymentCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/events/OrderCompletedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/events/OrderShippedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/events/PaymentProcessedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/model/CardDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/model/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/model/PaymentStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/model/ShipmentStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/queries/GetUserPaymentDetailsQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/saga_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/saga_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/OrderServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/aggregate/OrderAggregate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/command/CreateOrderCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/controller/OrderCommandController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/data/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/data/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/events/OrderCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/events/OrderEventsHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/model/OrderRestModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/saga/OrderProcessingSaga.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/ipap/paymentservice/PaymentServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/ipap/paymentservice/command/api/aggregate/PaymentAggregate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/ipap/paymentservice/command/api/data/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/ipap/paymentservice/command/api/data/PaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/ipap/paymentservice/command/api/events/PaymentsEventHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shipment-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shipment-service/src/main/java/com/ipap/shipmentservice/ShipmentServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shipment-service/src/main/java/com/ipap/shipmentservice/command/api/aggregate/ShipmentAggregate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shipment-service/src/main/java/com/ipap/shipmentservice/command/api/data/Shipment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shipment-service/src/main/java/com/ipap/shipmentservice/command/api/data/ShipmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shipment-service/src/main/java/com/ipap/shipmentservice/command/api/events/ShipmentsEventHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shipment-service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ipap/userservice/UserServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ipap/userservice/query/api/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ipap/userservice/query/api/projection/UserProjection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/aggregate/ProductAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/aggregate/ProductAggregate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/controller/ProductCommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/controller/ProductCommandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/data/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/data/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/query/api/projection/ProductProjection.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/query/api/projection/ProductProjection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +72,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -57,6 +87,11 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="workspaceImportEnabled" value="true" />
@@ -69,42 +104,94 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/elias/java-projects/spring-cqrs-event-sourcing/img",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/elias/java-projects/spring-cqrs-event-sourcing/order-service/src/main/java/com/ipap/orderservice/command/api&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.26954922&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;a59b1374cd0ec23eb8aec6d80b16dbef&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "h2",
-      "az_cosmos_mongo"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;,
+      &quot;az_cosmos_mongo&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\elias\java-projects\spring-cqrs-event-sourcing\img" />
       <recent name="C:\Users\elias\java-projects\spring-cqrs-event-sourcing" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\elias\java-projects\spring-cqrs-event-sourcing\img" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.ipap.orderservice.command.api.command" />
+      <recent name="com.ipap.userservice" />
+      <recent name="com.ipap.commonsservice" />
+      <recent name="com.ipap.orderservice" />
       <recent name="com.ipap.productservice" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.UserServiceApplication">
+    <configuration name="CommonsServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ipap.commonsservice.CommonsServiceApplication" />
+      <module name="commons-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ipap.commonsservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="order-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ipap.orderservice.OrderServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="payment-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ipap.paymentservice.PaymentServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ipap.paymentservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProductServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="product-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ipap.productservice.ProductServiceApplication" />
@@ -112,6 +199,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShipmentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="shipment-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ipap.shipmentservice.ShipmentServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ipap.shipmentservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="user-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ipap.userservice.UserServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ipap.userservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ShipmentServiceApplication" />
+        <item itemvalue="Spring Boot.PaymentServiceApplication" />
+        <item itemvalue="Spring Boot.UserServiceApplication" />
+        <item itemvalue="Application.CommonsServiceApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -121,8 +242,29 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675451167815</updated>
-      <workItem from="1675451169358" duration="9782000" />
+      <workItem from="1675451169358" duration="9992000" />
+      <workItem from="1675462895718" duration="306000" />
+      <workItem from="1675535073397" duration="19207000" />
+      <workItem from="1675555593718" duration="391000" />
+      <workItem from="1675555998227" duration="313000" />
+      <workItem from="1675556325340" duration="621000" />
+      <workItem from="1675556955828" duration="477000" />
+      <workItem from="1675557449490" duration="278000" />
+      <workItem from="1675557740198" duration="1368000" />
+      <workItem from="1675587820845" duration="115000" />
+      <workItem from="1675587947819" duration="798000" />
+      <workItem from="1675588758652" duration="428000" />
+      <workItem from="1675589199038" duration="375000" />
+      <workItem from="1675589587552" duration="1670000" />
     </task>
+    <task id="LOCAL-00001" summary="Init commit">
+      <created>1675462267042</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675462267042</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,5 +279,20 @@
     <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
     <option featureType="dependencySupport" implementationName="java:org.axonframework:axon-messaging" />
     <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init commit" />
   </component>
 </project>

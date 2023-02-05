@@ -33,6 +33,6 @@ public class ProductCommandController {
 
         String result = commandGateway.sendAndWait(command);
 
-        return ResponseEntity.ok(result);
+        return ResponseEntity.ok("Product created: " + result);
     }
 }

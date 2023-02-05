@@ -7,6 +7,7 @@ import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class ProductProjection {
@@ -25,6 +26,6 @@ public class ProductProjection {
                         .price(product.getPrice())
                         .quantity(product.getQuantity())
                         .build())
-                .toList();
+                .collect(Collectors.toList());
     }
 }

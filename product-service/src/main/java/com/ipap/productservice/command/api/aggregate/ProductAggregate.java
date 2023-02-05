@@ -2,6 +2,7 @@ package com.ipap.productservice.command.api.aggregate;
 
 import com.ipap.productservice.command.api.commands.CreateProductCommand;
 import com.ipap.productservice.command.api.events.ProductCreatedEvent;
+import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
@@ -12,6 +13,7 @@ import org.springframework.beans.BeanUtils;
 import java.math.BigDecimal;
 
 @Aggregate
+@Slf4j
 public class ProductAggregate {
     @AggregateIdentifier
     private String productId;
@@ -30,6 +32,7 @@ public class ProductAggregate {
         BeanUtils.copyProperties(createProductCommand, productCreatedEvent);
         // Publish the event
         AggregateLifecycle.apply(productCreatedEvent);
+        log.info("ProductCreatedEvent Applied");
     }
 
     @EventSourcingHandler
