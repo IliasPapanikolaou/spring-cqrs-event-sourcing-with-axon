@@ -40,12 +40,12 @@ Axon Server url: <http://localhost:8024>
     <dependency>
         <groupId>org.axonframework</groupId>
         <artifactId>axon-spring-boot-starter</artifactId>
-        <version>4.7.1</version>
+        <version>4.5.3</version>
     </dependency>
     <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
-        <version>31.1-jre</version>
+        <version>31.0.1-jre</version>
     </dependency>
 </dependencies>
 ```

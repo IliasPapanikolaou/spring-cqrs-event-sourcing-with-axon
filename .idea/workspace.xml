@@ -5,63 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8992d9f0-730c-4d5e-8d36-f7b573a8c978" name="Changes" comment="Init commit">
-      <change afterPath="$PROJECT_DIR$/commons-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/CommonServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/commands/CompleteOrderCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/commands/ShipmentOrderCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/commands/ValidatePaymentCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/events/OrderCompletedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/events/OrderShippedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/events/PaymentProcessedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/model/CardDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/model/OrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/model/PaymentStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/model/ShipmentStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-service/src/main/java/com/ipap/commonsservice/queries/GetUserPaymentDetailsQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/saga_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/saga_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/OrderServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/aggregate/OrderAggregate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/command/CreateOrderCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/controller/OrderCommandController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/data/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/data/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/events/OrderCreatedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/events/OrderEventsHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/model/OrderRestModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/ipap/orderservice/command/api/saga/OrderProcessingSaga.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/ipap/paymentservice/PaymentServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/ipap/paymentservice/command/api/aggregate/PaymentAggregate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/ipap/paymentservice/command/api/data/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/ipap/paymentservice/command/api/data/PaymentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/ipap/paymentservice/command/api/events/PaymentsEventHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shipment-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shipment-service/src/main/java/com/ipap/shipmentservice/ShipmentServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shipment-service/src/main/java/com/ipap/shipmentservice/command/api/aggregate/ShipmentAggregate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shipment-service/src/main/java/com/ipap/shipmentservice/command/api/data/Shipment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shipment-service/src/main/java/com/ipap/shipmentservice/command/api/data/ShipmentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shipment-service/src/main/java/com/ipap/shipmentservice/command/api/events/ShipmentsEventHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shipment-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ipap/userservice/UserServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ipap/userservice/query/api/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ipap/userservice/query/api/projection/UserProjection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/aggregate/ProductAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/aggregate/ProductAggregate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/controller/ProductCommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/controller/ProductCommandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/data/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/command/api/data/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/query/api/projection/ProductProjection.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/ipap/productservice/query/api/projection/ProductProjection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +199,7 @@
       <workItem from="1675587947819" duration="798000" />
       <workItem from="1675588758652" duration="428000" />
       <workItem from="1675589199038" duration="375000" />
-      <workItem from="1675589587552" duration="1670000" />
+      <workItem from="1675589587552" duration="1851000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1675462267042</created>
@@ -264,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675462267042</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Init commit">
+      <created>1675591353636</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675591353636</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
